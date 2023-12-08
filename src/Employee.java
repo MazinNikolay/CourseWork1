@@ -11,17 +11,17 @@ public class Employee {
     public Employee(String firstName, String surName, String lastName, int department, double salary) {
         counter++;
         id = counter;
-        if (firstName.equals(null) || firstName.equals("")) {
+        if (firstName.isEmpty() || firstName.isBlank()) {
             throw new IllegalArgumentException("Не заполнено имя сотрудника");
         } else {
             this.firstName = firstName;
         }
-        if (surName.equals(null) || surName.equals("")) {
+        if (surName.isEmpty() || surName.isBlank()) {
             throw new IllegalArgumentException("Не заполнено отчество сотрудника");
         } else {
             this.surName = surName;
         }
-        if (lastName.equals(null) || lastName.equals("")) {
+        if (lastName.isEmpty() || lastName.isBlank()) {
             throw new IllegalArgumentException("Не заполнена фамилия сотрудника");
         } else {
             this.lastName = lastName;
