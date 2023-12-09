@@ -51,9 +51,6 @@ public class CourseWorkApplication {
         String searchDataString = inputEmployeeData();
         System.out.println("Введите id сотрудника для удаления");
         int searchDataInt = inputEmployeeId();
-
-        System.out.println(searchDataString);
-
         if (searchDataString.isBlank() && searchDataInt == 0) {
             System.out.println("Не введены значения для поиска сотрудника");
         } else if (searchDataString.isBlank() && searchDataInt != 0) {
@@ -76,11 +73,13 @@ public class CourseWorkApplication {
 
     static String inputEmployeeData() {
         String searchDataString = "";
+        String[] searchDataStringArray = searchDataString.split(" ");
         Scanner scanner = new Scanner(System.in);
-        while (searchDataString.isBlank()) {
+        while (searchDataString.isBlank() || searchDataStringArray.length != 3) {
             searchDataString = scanner.nextLine();
-            if (searchDataString.isBlank()) {
-                System.out.println("Не введены значения для поиска сотрудника, введите данные заново");
+            searchDataStringArray = searchDataString.split(" ");
+            if (searchDataString.isBlank() || searchDataStringArray.length != 3) {
+                System.out.println("Данные для поиска сотрудника не введены или введены некорректно, введите данные заново");
             }
         }
         return searchDataString;

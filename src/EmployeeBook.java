@@ -212,12 +212,17 @@ public class EmployeeBook {
         String firstName = convertedDataString[0];
         String surName = convertedDataString[1];
         String lastName = convertedDataString[2];
+        boolean flagFinded = false;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getId() == searchDataInt && employees[i].getFirstName().equals(firstName) && employees[i].getSurName().equals(surName) && employees[i].getLastName().equals(lastName)) {
+                    flagFinded = true;
                     employees[i] = null;
                 }
             }
+        }
+        if (!flagFinded) {
+            System.out.println("Работник с такими данными не найден");
         }
     }
 
@@ -226,12 +231,17 @@ public class EmployeeBook {
         String firstName = convertedDataString[0];
         String surName = convertedDataString[1];
         String lastName = convertedDataString[2];
+        boolean flagFinded = false;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getFirstName().equals(firstName) && employees[i].getSurName().equals(surName) && employees[i].getLastName().equals(lastName)) {
+                    flagFinded = true;
                     employees[i] = null;
                 }
             }
+        }
+        if (!flagFinded) {
+            System.out.println("Работник с такими данными не найден");
         }
     }
 
@@ -250,14 +260,18 @@ public class EmployeeBook {
         String firstName = convertedDataString[0];
         String surName = convertedDataString[1];
         String lastName = convertedDataString[2];
-        System.out.println(firstName + surName + lastName);
+        boolean flagFinded = false;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getFirstName().equals(firstName) && employees[i].getSurName().equals(surName) && employees[i].getLastName().equals(lastName)) {
+                    flagFinded = true;
                     employees[i].setSalary(20_000);
                     employees[i].setDepartment(1);
                 }
             }
+        }
+        if (!flagFinded) {
+            System.out.println("Работник с такими данными не найден");
         }
     }
 
